@@ -8,7 +8,7 @@ function Gallery() {
             <div className="galleryContent">
                 {GalleryContent.map((item, index) => (
                 <div key={index} id="galleryItem">
-                    <img className="galleryImage" id={item.id} src={"src/assets/img/"+item.id+".jpg"} alt={item.description} />
+                    <img className="galleryImage" id={item.id} src={"/src/assets/img/"+item.id+".jpg"} alt={item.description} />
                     <p>{item.description}</p>
                     </div>
                 ))}
