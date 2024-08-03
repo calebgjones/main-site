@@ -1,6 +1,7 @@
 import '../../assets/fonts/fonts.css';
 import './NavigationBar.css';
 import { useState, useEffect } from 'react';
+import { Link,  Outlet } from 'react-router-dom';
 
 function NavigationBar() {
 
@@ -13,7 +14,7 @@ function NavigationBar() {
     setTitleFont(randomFont);
     document.getElementById("titleContent").style.fontFamily = randomFont;
   }
-
+ 
   useEffect(() => {
     const interval = setInterval(setRandomTitleFont, 1000);
     return () => clearInterval(interval);
@@ -21,38 +22,34 @@ function NavigationBar() {
   const caleb = ["C", "a", "l", "e", "b", "!"];
 
   return (
+    <>
     <div id="navContainer">
       <a>
         <div id="navBackground">
-          {[caleb].map((char, index) => (
-            <h1
-              key={index}
-              id="titleContent"
-              {...caleb.map((char, index) => (
-                <h1
-                  key={index}
-                  id={`titleContent-${index}`}
-                  style={{ fontFamily: titleFont }}
-                >
-                  {char}
-                </h1>
-              ))}
-            >
-              {char}
-            </h1>
+          {caleb.map((char, index) => (
+              <h1
+                key={index}
+                id={`titleContent`}
+                style={{ fontFamily: titleFont }}
+                content={char}
+              >
+                {char}
+              </h1>
           ))}
         </div>
       </a>
       <nav>
         <ul>
-          <a href="#"><li>Home</li></a>
-          <a href="#gallery"><li>Gallery</li></a>
-          <a href="#portfolio"><li>Portfolio</li></a>
-          <a href="#about"><li>About</li></a>
-          <a href="#contact"><li>Contact</li></a>
+          <Link to="/"><li>Home</li></Link>
+          <Link to="/gallery"><li>Gallery</li></Link>
+          <Link to="/portfolio"><li>Portfolio</li></Link>
+          <Link to="/about"><li>About</li></Link>
+          <Link to="/contact"><li>Contact</li></Link>
         </ul>
       </nav>
     </div>
+    <Outlet/>
+    </>
   );
 }
 

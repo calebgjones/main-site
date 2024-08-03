@@ -1,14 +1,17 @@
-import '../../index.css';
+import '../ContentArea/ContentArea.css';
+import GalleryContent from './GalleryContent.js';
 
 function Gallery() {
     return (
-        <div id="galleryContainer">
-            <h1>Gallery</h1>
-            <div id="galleryContent">
-                <div id="galleryItem">
-                    <img src="https://via.placeholder.com/150" alt="placeholder" />
-                    <p>Item 1</p>
+        <div id="contentContainer">
+            <h1 className="contentHeader">Gallery</h1>
+            <div className="galleryContent">
+                {GalleryContent.map((item, index) => (
+                <div key={index} id="galleryItem">
+                    <img className="galleryImage" id={item.id} src={"src/assets/img/"+item.id+".jpg"} alt={item.description} />
+                    <p>{item.description}</p>
                     </div>
+                ))}
                 </div>
                 </div>
     )

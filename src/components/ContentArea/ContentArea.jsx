@@ -2,6 +2,7 @@ import './ContentArea.css';
 import Content from './Content.js';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { Outlet } from 'react-router-dom';
 
 function ContentArea() {
 
@@ -16,6 +17,7 @@ useEffect(() => {
 
     return (
         <div id="contentContainer">
+            <Outlet />
             {Content.map((item, index) => (
                 <div key={index}>
                     <h1 id={item.section} className="contentHeader">{item.header}</h1>

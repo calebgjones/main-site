@@ -2,23 +2,40 @@
     display: flex;
     position: absolute;
     flex-direction: column;
-    width: 80%;
     top: 6em;
+    width: 90%;
     padding: 0 20px;
-    background-color: #F6F5AE;
+    background-color: #7c97a3;
     border-radius: 0 0 1em 1em;
     box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.5);
     z-index: -1;
 }
 
 .contentHeader {
-    color: black;
+    color: white;
+    text-shadow: black 2px 2px 2px;
     font-size: 25pt;
     font-family: 'Arial';
 }
 
 .contentBody {
     display: flex;
-    color: black;
+    color: white;
     margin: 0 0 40px 0;
+    font-size: 20pt;
+    overflow-y: scroll;
+}
+
+.galleryContent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 0 0 40px 0;
+    overflow: hidden;
+}
+
+.galleryImage {
+    padding: 10px;
+    max-width: 200px;
+    max-height: 200px;
 }
