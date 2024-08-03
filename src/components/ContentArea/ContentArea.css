@@ -34,8 +34,23 @@
     overflow: hidden;
 }
 
+.galleryItem {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 20px 0;
+}
+
 .galleryImage {
-    padding: 10px;
+    border: black 3px solid;
+    border-radius: 10px;
+    padding: 0px;
     max-width: 200px;
     max-height: 200px;
+}
+
+.galleryDescription {
+    color: black;
+    font-size: 15pt;
+    text-align: center;
+    margin: 0 0 20px 0;
 }
