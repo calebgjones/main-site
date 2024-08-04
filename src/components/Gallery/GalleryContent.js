@@ -77,7 +77,7 @@ const GalleryContent = [
     },
     {
         id: 20,
-        description: "Item 20"
+        description: "Falling into lake :O"
     }
 ]
 
