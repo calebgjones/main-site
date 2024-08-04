@@ -12,7 +12,7 @@ function onLoad(event) {
             <div className="galleryContent">
                 {GalleryContent.map((item, index) => (
                 <div key={index} id="galleryItem">
-                    <img onLoad={onLoad} className="galleryImage" id={item.id} src={"src/public/img/"+item.id+".jpg"} alt={item.description} />
+                    <img onLoad={onLoad} className="galleryImage" id={item.id} src={"/img/"+item.id+".jpg"} alt={item.description} />
                     <p className="galleryDescription">{item.description}</p>
                     </div>
                 ))}

@@ -3,17 +3,22 @@ import Content from './Content.js';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
+import axios from 'axios';
 
 function ContentArea() {
 
-const [contentHeader, setContentHeader] = useState("loading header...");
-const [contentBody, setContentBody] = useState("loading content...");
+var [contentHeader, setContentHeader] = useState("loading header...");
+var [contentBody, setContentBody] = useState("loading content...");
 
 
-useEffect(() => {
-        setContentHeader([Content[0].header]);
-        setContentBody([Content[0].body]);
-}, []);
+// var getData = async () => {
+//     return await axios.get('http://localhost:8443/health');
+// }
+
+// useEffect(() => {
+//     contentBody = getData;
+//     setContentHeader("Welcome to my page!!!");    
+// });
 
     return (
         <div id="contentContainer">

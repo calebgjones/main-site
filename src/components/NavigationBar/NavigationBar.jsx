@@ -1,4 +1,4 @@
-import '/src/public/fonts/fonts.css';
+import '/src/fonts/fonts.css';
 import './NavigationBar.css';
 import { useState, useEffect } from 'react';
 import { Link,  Outlet } from 'react-router-dom';
@@ -6,7 +6,9 @@ import { Link,  Outlet } from 'react-router-dom';
 function NavigationBar() {
 
   const [titleFont, setTitleFont] = useState("kbdunktank");
-
+  var caleb = "Caleb!";
+  var calebArr = caleb.split(/(?!$)/u);
+  const socialMedia = ["github", "linkedin"];
 
   function setRandomTitleFont() {
     const fonts = ["kbdunktank", "kbgoogleyeyes", "kbluckyclover", "kbplanetearth", "kbwhenpigsfly", "kbwitchinghour"];
@@ -18,9 +20,6 @@ function NavigationBar() {
     const interval = setInterval(setRandomTitleFont, 1000);
     return () => clearInterval(interval);
   }, []);
-  var caleb = "Caleb!";
-  let calebArr = caleb.split(/(?!$)/u);
-  const socialMedia = ["github", "linkedin"];
 
   return (
     <>
