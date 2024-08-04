@@ -1,12 +1,14 @@
 import '/src/fonts/fonts.css';
 import './NavigationBar.css';
+import {isProfane} from 'no-profanity';
 import { useState, useEffect } from 'react';
 import { Link,  Outlet } from 'react-router-dom';
+import { notify } from '../Notifications';
 
 function NavigationBar() {
 
   const [titleFont, setTitleFont] = useState("kbdunktank");
-  var caleb = "Caleb!";
+  var [caleb, setCaleb] = useState("Caleb!");
   var calebArr = caleb.split(/(?!$)/u);
   const socialMedia = ["github", "linkedin"];
 
@@ -53,6 +55,32 @@ function NavigationBar() {
                   setTimeout(() => {
                     document.getElementById(`titleContent-${index}`).style.color = "black";
                   }, 3000);
+                }}
+                onClick={() => {
+                  let titlePrompt = prompt(caleb);
+                  if (titlePrompt === null) {
+                    setCaleb("Caleb!");
+                  } else if (titlePrompt.replace(/ /g, '') === '') {
+                    setCaleb("Caleb!");
+                  } 
+                  else if (isProfane(titlePrompt) === true) {
+                    notify("Profanity detected! Commencing nice-word sequence...", "warn");
+                    setTimeout(() => {
+                      notify("3...", "warn");
+                    }, 1000);
+                    setTimeout(() => {
+                      notify("2...", "warn");
+                    }, 2000);
+                    setTimeout(() => {
+                      notify("1...", "warn");
+                    }, 3000);
+                    setTimeout(() => {
+                      setCaleb("I love nice words!");
+                      notify("Nice words activated!", "success");
+                    }, 4000);
+                  } else {
+                  setCaleb(titlePrompt);
+                  }
                 }}
               >
                 {char}

@@ -30,7 +30,7 @@
     color: black;
     font-size: 30pt;
     margin: 0 5px -40px 5px;
-    transition: color 0.2s ease-in-out;
+    transition: color 0.25s ease-in-out;
 }
 
 #socialMediaLinks:hover {
@@ -50,17 +50,15 @@
 ul {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     list-style-type: none;
     margin: auto;
     left: 0;
     right: 0;
     padding: 0;
-    overflow: scrollx;
     position: fixed;
     top: 65px;
     background-color: black;
-    z-index: 10;
 }
 
 li {
@@ -77,6 +75,12 @@ li:hover {
     background-color: rgb(64, 64, 64);
     border-radius: 2px;
     margin: -3px 0;
+}
+
+@media screen and (max-width: 400px) {
+    li {
+        font-size: 10pt;
+    }
 }
 
 a {
