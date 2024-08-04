@@ -64,7 +64,7 @@ function NavigationBar() {
                     setCaleb("Caleb!");
                   } 
                   else if (isProfane(titlePrompt) === true) {
-                    notify("Profanity detected! Commencing nice-word sequence...", "warn");
+                    notify("Profanity detected! Commencing nice-word sequence...", "error");
                     setTimeout(() => {
                       notify("3...", "warn");
                     }, 1000);
