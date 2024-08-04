@@ -20,11 +20,28 @@
     justify-content: center;
 }
 
-#titleContent-0, #titleContent-1, #titleContent-2, #titleContent-3, #titleContent-4, #titleContent-5 {
+#socialMediaLinksContainer {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: right;
+}
+
+#socialMediaLinks {
+    color: black;
+    font-size: 30pt;
+    margin: 0 5px -40px 5px;
+    transition: color 0.2s ease-in-out;
+}
+
+#socialMediaLinks:hover {
+    color: #ffffff;
+}
+
+[id*='titleContent']{
     font-size: 40pt;
     color: black;
     position: static;
-    margin: 0 0 10px 0;
+    margin: 0 3px 10px 3px;
     padding: 0 0 5px 0;
     transition: color 0.15s ease-in-out;
     align-self: center;

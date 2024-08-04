@@ -18,14 +18,28 @@ function NavigationBar() {
     const interval = setInterval(setRandomTitleFont, 1000);
     return () => clearInterval(interval);
   }, []);
-  const caleb = ["C", "a", "l", "e", "b", "!"];
+  var caleb = "Caleb!";
+  let calebArr = caleb.split(/(?!$)/u);
+  const socialMedia = ["github", "linkedin"];
 
   return (
     <>
       <div id="navContainer">
+        <div id="socialMediaLinksContainer">
+          {socialMedia.map((char) => (
+          <a  id="socialMediaLinks" 
+              href={`https://www.${char}.com/`}
+              target="_blank" 
+              rel="noopener noreferrer">
+              <i 
+                  className={`fab fa-${char}`}>
+              </i>
+          </a>
+          ))}
+        </div>
         <a>
           <div id="navBackground">
-            {caleb.map((char, index) => (
+            {calebArr.map((char, index) => (
               <h1
                 key={index}
                 id={`titleContent-${index}`}

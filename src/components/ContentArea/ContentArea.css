@@ -40,7 +40,7 @@
     margin: 0 0 20px 0;
 }
 
-.galleryImage {
+img {
     border: black 3px solid;
     border-radius: 10px;
     padding: 0px;
