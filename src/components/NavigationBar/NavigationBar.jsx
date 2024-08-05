@@ -3,39 +3,30 @@ import './NavigationBar.css';
 import {isProfane} from 'no-profanity';
 import { useState, useEffect } from 'react';
 import { Link,  Outlet } from 'react-router-dom';
-import { notify } from '../Notifications';
+import { notify } from '../Notifications.jsx';
 
 function NavigationBar() {
-
-  const [titleFont, setTitleFont] = useState("kbdunktank");
-  var [caleb, setCaleb] = useState("Caleb!");
+  var [caleb, setCaleb] = useState("Caleb Jones");
   var calebArr = caleb.split(/(?!$)/u);
   const socialMedia = ["github", "linkedin"];
+  const [titleDefinition, setTitleDefinition] = useState("Full-Stack Developer.");
+  var [showNavbar, changeShowNavBar] = useState(false);
+  var [navBarClassName, changeNavBarClassName] = useState("fas fa-bars");
 
-  function setRandomTitleFont() {
-    const fonts = ["kbdunktank", "kbgoogleyeyes", "kbluckyclover", "kbplanetearth", "kbwhenpigsfly", "kbwitchinghour"];
-    const randomFont = fonts[Math.floor(Math.random() * fonts.length)];
-    setTitleFont(randomFont);
-  }
- 
-  useEffect(() => {
-    const interval = setInterval(setRandomTitleFont, 1000);
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <>
       <div id="navContainer">
         <div id="socialMediaLinksContainer">
           {socialMedia.map((char) => (
-          <a  id="socialMediaLinks" 
+            <a
+              id="socialMediaLinks"
               href={`https://www.${char}.com/`}
-              target="_blank" 
-              rel="noopener noreferrer">
-              <i 
-                  className={`fab fa-${char}`}>
-              </i>
-          </a>
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i className={`fab fa-${char}`}></i>
+            </a>
           ))}
         </div>
         <a>
@@ -44,12 +35,10 @@ function NavigationBar() {
               <h1
                 key={index}
                 id={`titleContent-${index}`}
-                style={{ fontFamily: titleFont }}
+                style={{ fontFamily: "kognigear.regular" }}
                 content={char}
                 onMouseEnter={() => {
-                  const colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
-                  const randomColor = colors[Math.floor(Math.random() * colors.length)];
-                  document.getElementById(`titleContent-${index}`).style.color = randomColor;
+                  document.getElementById(`titleContent-${index}`).style.color = "white";
                 }}
                 onMouseLeave={() => {
                   setTimeout(() => {
@@ -59,11 +48,10 @@ function NavigationBar() {
                 onClick={() => {
                   let titlePrompt = prompt(caleb);
                   if (titlePrompt === null) {
-                    setCaleb("Caleb!");
-                  } else if (titlePrompt.replace(/ /g, '') === '') {
-                    setCaleb("Caleb!");
-                  } 
-                  else if (isProfane(titlePrompt) === true) {
+                    setCaleb("Caleb Jones");
+                  } else if (titlePrompt.replace(/ /g, "") === "") {
+                    setCaleb("Caleb Jones");
+                  } else if (isProfane(titlePrompt) === true) {
                     notify("Profanity detected! Commencing nice-word sequence...", "error");
                     setTimeout(() => {
                       notify("3...", "warn");
@@ -79,26 +67,85 @@ function NavigationBar() {
                       notify("Nice words activated!", "success");
                     }, 4000);
                   } else {
-                  setCaleb(titlePrompt);
+                    setCaleb(titlePrompt);
                   }
                 }}
               >
                 {char}
               </h1>
             ))}
+            <h2 id="titleDefinition">{titleDefinition}</h2>
           </div>
         </a>
         <nav>
-          <ul>
-            <Link to="/"><li>Home</li></Link>
-            <Link to="/gallery"><li>Gallery</li></Link>
-            <Link to="/portfolio"><li>Portfolio</li></Link>
-            <Link to="/about"><li>About</li></Link>
-            <Link to="/contact"><li>Contact</li></Link>
+          <a id="showNavBar" onClick={() => {
+            changeShowNavBar(!showNavbar);
+            console.log("Navbar is " + showNavbar);
+            if (showNavbar === false) {
+              document.getElementById("navBar").className = changeNavBarClassName("fas fa-bars");
+
+              document.getElementById("navBar").style.display = "none";
+            } else {
+              document.getElementById("navBar").className = changeNavBarClassName("fas fa-times");
+              document.getElementById("navBar").style.display = "flex";
+          }}}>
+            <i className={navBarClassName}></i>
+          </a>
+          <ul id="navBar">
+            <Link to="/" onClick={() => {
+            changeShowNavBar(!showNavbar);
+            if (showNavbar === false) {
+              document.getElementById("navBar").className = changeNavBarClassName("fas fa-bars");
+
+              document.getElementById("navBar").style.display = "none";
+            } else {
+              document.getElementById("navBar").className = changeNavBarClassName("fas fa-times");
+              document.getElementById("navBar").style.display = "flex";
+          }}}><li>Home</li></Link>
+            <Link to="/gallery" onClick={() => {
+            changeShowNavBar(!showNavbar);
+            if (showNavbar === false) {
+              document.getElementById("navBar").className = changeNavBarClassName("fas fa-bars");
+
+              document.getElementById("navBar").style.display = "none";
+            } else {
+              document.getElementById("navBar").className = changeNavBarClassName("fas fa-times");
+              document.getElementById("navBar").style.display = "flex";
+          }}}><li>Gallery</li></Link>
+            <Link to="/portfolio" onClick={() => {
+            changeShowNavBar(!showNavbar);
+            if (showNavbar === false) {
+              document.getElementById("navBar").className = changeNavBarClassName("fas fa-bars");
+
+              document.getElementById("navBar").style.display = "none";
+            } else {
+              document.getElementById("navBar").className = changeNavBarClassName("fas fa-times");
+              document.getElementById("navBar").style.display = "flex";
+          }}}><li>Portfolio</li></Link>
+            <Link to="/about" onClick={() => {
+            changeShowNavBar(!showNavbar);
+            if (showNavbar === false) {
+              document.getElementById("navBar").className = changeNavBarClassName("fas fa-bars");
+
+              document.getElementById("navBar").style.display = "none";
+            } else {
+              document.getElementById("navBar").className = changeNavBarClassName("fas fa-times");
+              document.getElementById("navBar").style.display = "flex";
+          }}}><li>About</li></Link>
+            <Link to="/contact" onClick={() => {
+            changeShowNavBar(!showNavbar);
+            if (showNavbar === false) {
+              document.getElementById("navBar").className = changeNavBarClassName("fas fa-bars");
+
+              document.getElementById("navBar").style.display = "none";
+            } else {
+              document.getElementById("navBar").className = changeNavBarClassName("fas fa-times");
+              document.getElementById("navBar").style.display = "flex";
+          }}}><li>Contact</li></Link>
           </ul>
         </nav>
       </div>
-      <Outlet/>
+      <Outlet />
     </>
   );
 }

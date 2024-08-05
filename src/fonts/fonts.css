@@ -1,26 +1,10 @@
 /* Fonts */
 
 @font-face {
-    font-family: 'kbdunktank';
-    src: url('Kbdunktank.ttf') format('truetype');
+    font-family: 'kognigear.regular';
+    src: url('kognigear.regular.ttf') format('truetype');
 }
 @font-face {
-    font-family: 'kbgoogleyeyes';
-    src: url('Kbgoogleyeyes.ttf') format('truetype');
-}
-@font-face {
-    font-family: 'kbluckyclover';
-    src: url('Kbluckyclover.ttf') format('truetype');
-}
-@font-face {
-    font-family: 'kbplanetearth';
-    src: url('Kbplanetearth.ttf') format('truetype');
-}
-@font-face {
-    font-family: 'kbwhenpigsfly';
-    src: url('Kbwhenpigsfly.ttf') format('truetype');
-}
-@font-face {
-    font-family: 'kbwitchinghour';
-    src: url('Kbwitchinghour.ttf') format('truetype');
+    font-family: 'panton.light-caps';
+    src: url('panton.light-caps.otf') format('truetype');
 }

@@ -1,9 +1,3 @@
-#titleClickContent {
-    display: block;
-    height: 50%;
-    width: 50%;
-}
-
 #navContainer {
     left: 0;
     right: 0;
@@ -17,7 +11,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-bottom: -15px;
+    margin-bottom: -20px;
 }
 
 #socialMediaLinksContainer {
@@ -38,30 +32,49 @@
 }
 
 [id*='titleContent']{
-    font-size: 40pt;
     color: black;
+    font-size: 70pt;
     position: static;
-    margin: 0 3px 10px 3px;
+    margin: 0 0 20px 0;
     padding: 0 0 5px 0;
     transition: color 0.15s ease-in-out;
     align-self: center;
 }
 
-ul {
+#titleDefinition {
+    position: absolute;
+    top: 70px;
+    right: 20%;
+    color: #fffffff0;
+    transition: color 0.15s ease-in-out, right 0.15s ease-in-out;
+}
+
+#titleDefinition:hover {
+    color: black;
+}
+
+#showNavBar {
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    font-size: 20pt;
+    margin-left: 13px;
+    padding: 0 0 10px 0;
+}
+
+ul {
+    display: none;
+    flex-direction: column;
+    justify-content: left;
     list-style-type: none;
-    margin: auto;
-    left: 0;
-    right: 0;
-    padding: 0;
+    width: 100px;
+    margin: 15px 0 0 11px;
+    padding: 0 20px 0 20px;
     position: fixed;
-    top: 65px;
+    top: 140px;
     background-color: rgba(0, 0, 0, 0.753);
 }
 
 li {
+    font-family: 'Arial';
     color: #d0d0d0;
     font-size: 18pt;
     float: left;
@@ -75,16 +88,21 @@ li:hover {
     color: #ffffff;
     background-color: rgba(64, 64, 64, 0.887);
     border-radius: 2px;
-    margin: -3px 0;
+    margin: 0 -3px 0 -3px;
 }
 
 @media screen and (max-width: 400px) {
     li {
         font-size: 10pt;
     }
+    [id*='titleContent'] {
+        font-size: 60pt;
+        margin: 0 0 18px 0;
+    }
 }
 
-a {
-    text-decoration: none;
-    color: #ffffff;
+@media screen and (min-width: 800px) {
+    #titleDefinition {
+        right: 30%;
+    }
 }
