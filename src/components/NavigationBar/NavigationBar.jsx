@@ -77,8 +77,7 @@ function NavigationBar() {
             <h2 id="titleDefinition">{titleDefinition}</h2>
           </div>
         </a>
-        <nav>
-          <a id="showNavBar" onClick={() => {
+        <a id="showNavBar" onClick={() => {
             changeShowNavBar(!showNavbar);
             console.log("Navbar is " + showNavbar);
             if (showNavbar === false) {
@@ -89,8 +88,9 @@ function NavigationBar() {
               document.getElementById("navBar").className = changeNavBarClassName("fas fa-times");
               document.getElementById("navBar").style.display = "flex";
           }}}>
-            <i className={navBarClassName}></i>
+            <i id="showNavBar" className={navBarClassName}></i>
           </a>
+        <nav>
           <ul id="navBar">
             <Link to="/" onClick={() => {
             changeShowNavBar(!showNavbar);
