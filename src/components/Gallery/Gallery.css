@@ -1,0 +1,51 @@
+#galleryContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.galleryContent {
+    display: flex;
+    text-align: center;
+    margin: 0 10px 40px 10px;
+}
+
+.galleryImage {
+    border: black 3px solid;
+    border-radius: 10px;
+    max-width: 200px;
+    max-height: 200px;
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.galleryDescription {
+    color: black;
+    font-size: 15pt;
+    text-align: center;
+    margin: 0 0 20px 0;
+}
+
+.galleryImage:hover {
+    transform: scale(1.1);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+#popUpImage{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    padding: 20px;
+    transform: translate(-50%, -50%) scale(.15);
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.293);
+    overflow: visible;
+}
+
+#popUpClose {
+    position: fixed;
+    bottom: 5%;
+    z-index: 1000;
+    width: 100px;
+    height: 30px;
+}

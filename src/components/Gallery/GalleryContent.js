@@ -1,11 +1,11 @@
 const GalleryContent = [
     {
         id: 1,
-        description: "Item 1"
+        description: "UT - CO Border"
     },
     {
         id: 2,
-        description: "Item 2"
+        description: "Sunset Station, NV"
     },
     {
         id: 3,
@@ -13,7 +13,7 @@ const GalleryContent = [
     },
     {
         id: 4,
-        description: "Item 4"
+        description: "K1 Speed, Murray UT"
     },
     {
         id: 5,
@@ -21,19 +21,19 @@ const GalleryContent = [
     },
     {
         id: 6,
-        description: "Item 6"
+        description: "Jackson, WY"
     },
     {
         id: 7,
-        description: "Item 7"
+        description: "Murray, UT"
     },
     {
         id: 8,
-        description: "Item 8"
+        description: "Cottonwood Heights, UT"
     },
     {
         id: 9,
-        description: "Item 9"
+        description: "Cottonwood Heights, UT"
     },
     {
         id: 10,
@@ -45,19 +45,19 @@ const GalleryContent = [
     },
     {
         id: 12,
-        description: "Item 12"
+        description: "Yellowstone National Park, WY"
     },
     {
         id: 13,
-        description: "Item 13"
+        description: "Big Cottonwood Canyon, UT"
     },
     {
         id: 14,
-        description: "Item 14"
+        description: "Salt Lake City, UT"
     },
     {
         id: 15,
-        description: "Item 15"
+        description: "Salt Lake City, UT"
     },
     {
         id: 16,
@@ -73,7 +73,7 @@ const GalleryContent = [
     },
     {
         id: 19,
-        description: "Item 19"
+        description: "Flaming Gorge, UT"
     },
     {
         id: 20,

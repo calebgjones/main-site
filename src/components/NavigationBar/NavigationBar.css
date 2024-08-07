@@ -5,7 +5,7 @@
     position: fixed;
     text-align: center;
     background-color: #93b5c6;
-    z-index: 1;
+    z-index: -2;
 }
 
 #navBackground {
@@ -13,7 +13,7 @@
     flex-direction: row;
     justify-content: center;
     margin-bottom: -20px;
-    z-index: -1;
+    z-index: -2;
 }
 
 #socialMediaLinksContainer {
