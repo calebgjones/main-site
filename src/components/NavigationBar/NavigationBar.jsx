@@ -9,7 +9,7 @@ function NavigationBar() {
   var [caleb, setCaleb] = useState("Caleb Jones");
   var calebArr = caleb.split(/(?!$)/u);
   const socialMedia = ["github", "linkedin"];
-  const [titleDefinition, setTitleDefinition] = useState("Full-Stack Developer.");
+  const [titleDefinition, setTitleDefinition] = useState("UX Developer");
   var [showNavbar, changeShowNavBar] = useState(false);
   var [navBarClassName, changeNavBarClassName] = useState("fas fa-bars");
 

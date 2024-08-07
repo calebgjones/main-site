@@ -41,7 +41,6 @@
     padding: 0 0 5px 0;
     transition: color 0.15s ease-in-out;
     align-self: center;
-    z-index: 1;
 }
 
 #titleDefinition {
