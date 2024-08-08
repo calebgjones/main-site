@@ -8,7 +8,8 @@ import { notify } from '../Notifications.jsx';
 function NavigationBar() {
   var [caleb, setCaleb] = useState("Caleb Jones");
   var calebArr = caleb.split(/(?!$)/u);
-  const socialMedia = ["github", "linkedin"];
+  var socialMedia = ["github.com/calebgjones", "linkedin.com/in/caleb-jones-a39150185/", "instagram.com/ok.lub"];
+  var socialMediaIcons = socialMedia.map((url) => url.split(/https:\/www.|.com\//));
   const [titleDefinition, setTitleDefinition] = useState("UX Developer");
   var [titleDefinitionOpacity, changeTitleDefinitionOpacity] = useState("1");
   var [showNavbar, changeShowNavBar] = useState(false);
@@ -57,6 +58,7 @@ function NavigationBar() {
         changeTitleFontSize("30pt");
         changeTitleDefinitionOpacity("0");
         changeNavLinksTop("55px");
+        console.log(socialMediaIcons);
 
           /* Mobile Device, scrolled */
         } else if (window.innerWidth < 400) {
@@ -80,14 +82,14 @@ function NavigationBar() {
     <>
       <div id="navContainer">
         <div id="socialMediaLinksContainer">
-          {socialMedia.map((char) => (
+          {socialMediaIcons.map((char) => (
             <a
               id="socialMediaLinks"
-              href={`https://www.${char}.com/`}
+              href={`https://www.${char[0]}.com/${char[1]}`}
               target="_blank"
               rel="noopener noreferrer"
             >
-              <i className={`fab fa-${char}`}></i>
+              <i className={`fab fa-${char[0]}`}></i>
             </a>
           ))}
         </div>
