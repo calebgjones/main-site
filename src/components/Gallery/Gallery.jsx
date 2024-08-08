@@ -10,7 +10,6 @@ function Gallery() {
 const handleClick = (item) => {
     setCurrentID(item.id);
     setPopUpVisible(!popUpVisible);
-    console.log("Active ID: "+item.id);
 }
 
 function handleClose () {

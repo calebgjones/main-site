@@ -13,8 +13,15 @@ function NavigationBar() {
   var [titleDefinitionOpacity, changeTitleDefinitionOpacity] = useState("1");
   var [showNavbar, changeShowNavBar] = useState(false);
   var [navBarClassName, changeNavBarClassName] = useState("fas fa-bars");
-  var [navBarStyle, changeNavBarStyle] = useState({display: 'flex', flexDirection: 'row', justifyContent: 'center', marginBottom: '-20px', zIndex: '-2'});
+
+  var [navBarStyle, changeNavBarStyle] = useState({ display: 'flex', 
+                                                    flexDirection: 'row', 
+                                                    justifyContent: 'center', 
+                                                    marginBottom: '-20px', 
+                                                    zIndex: '-2'});
+
   var [titleFontSize, changeTitleFontSize] = useState("70pt");
+  var [navLinksTop, changeNavLinksTop] = useState("107px");
 
   const handleWindowSizeChange = (event) => {
     if (window.innerWidth < 400) {
@@ -28,20 +35,30 @@ function NavigationBar() {
   useEffect(() => {
     const handleScroll = (event) => {
       if (window.pageYOffset < 20) {
+
+          /* Desktop Device, not scrolled */
         if (window.innerWidth > 400) {
           changeNavBarStyle(navBarStyle);
           changeTitleFontSize("70pt");
           changeTitleDefinitionOpacity("1");
-        } else if (window.innerWidth < 400) {
+          changeNavLinksTop("107px");
+
+          /* Mobile Device, not scrolled */
+        } else if (window.innerWidth < 400) { 
           changeNavBarStyle({display: 'flex', flexDirection: 'row', justifyContent: 'center', marginBottom: '5px', marginTop: '20px', zIndex: '-2'});
           changeTitleFontSize("40pt");
           changeTitleDefinitionOpacity("0");
         }
       } else if (window.pageYOffset > 20) {
+
+          /* Desktop Device, scrolled */
         if (window.innerWidth > 400) {
         changeNavBarStyle({display: 'flex', flexDirection: 'row', justifyContent: 'center', marginBottom: '-10px', zIndex: '-2'});
         changeTitleFontSize("30pt");
         changeTitleDefinitionOpacity("0");
+        changeNavLinksTop("55px");
+
+          /* Mobile Device, scrolled */
         } else if (window.innerWidth < 400) {
           changeNavBarStyle({display: 'flex', flexDirection: 'row', justifyContent: 'center', marginBottom: '5px', marginTop: '20px', zIndex: '-2'});
           changeTitleFontSize("40pt");
@@ -135,7 +152,7 @@ function NavigationBar() {
             <i id="showNavBar" className={navBarClassName}></i>
           </a>
         <nav>
-          <ul id="navBar">
+          <ul style={{ top: navLinksTop }} id="navBar">
             <Link to="/" onClick={() => {
             changeShowNavBar(!showNavbar);
             if (showNavbar === false) {
