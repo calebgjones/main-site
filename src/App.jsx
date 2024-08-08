@@ -10,9 +10,6 @@ function App() {
     notify(message, type);
   }
 
-  const [galleryVisible, setGalleryVisible] = useState(false);
-
-
   return (
     <>
       <Notification />

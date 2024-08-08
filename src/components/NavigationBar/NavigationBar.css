@@ -9,11 +9,7 @@
 }
 
 #navBackground {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-bottom: -20px;
-    z-index: -2;
+    transition: margin 0.5s;
 }
 
 #socialMediaLinksContainer {
@@ -35,20 +31,20 @@
 
 [id*='titleContent']{
     color: black;
-    font-size: 70pt;
     position: static;
     margin: 0 0 20px 0;
     padding: 0 0 5px 0;
-    transition: color 0.15s ease-in-out;
+    transition: color 0.15s ease-in-out, font-size 0.3s ease-in-out;
     align-self: center;
 }
 
 #titleDefinition {
+    display: block;
     position: absolute;
     top: 70px;
     right: 20%;
     color: #fffffff0;
-    transition: color 0.15s ease-in-out, right 0.15s ease-in-out;
+    transition: color 0.15s ease-in-out, opacity .25s linear;
 }
 
 #titleDefinition:hover {
@@ -99,11 +95,8 @@ li:hover {
 }
 
 @media screen and (max-width: 400px) {
-    li {
-        font-size: 10pt;
-    }
     [id*='titleContent'] {
-        font-size: 60pt;
+        font-size: 30pt;
         margin: 0 0 18px 0;
     }
 }

@@ -10,9 +10,54 @@ function NavigationBar() {
   var calebArr = caleb.split(/(?!$)/u);
   const socialMedia = ["github", "linkedin"];
   const [titleDefinition, setTitleDefinition] = useState("UX Developer");
+  var [titleDefinitionOpacity, changeTitleDefinitionOpacity] = useState("1");
   var [showNavbar, changeShowNavBar] = useState(false);
   var [navBarClassName, changeNavBarClassName] = useState("fas fa-bars");
+  var [navBarStyle, changeNavBarStyle] = useState({display: 'flex', flexDirection: 'row', justifyContent: 'center', marginBottom: '-20px', zIndex: '-2'});
+  var [titleFontSize, changeTitleFontSize] = useState("70pt");
 
+  const handleWindowSizeChange = (event) => {
+    if (window.innerWidth < 400) {
+      changeNavBarStyle({display: 'flex', flexDirection: 'row', justifyContent: 'center', marginBottom: '5px', marginTop: '20px', zIndex: '-2'});
+      changeTitleFontSize("40pt");
+      changeTitleDefinitionOpacity("0");
+    }
+  };
+
+
+  useEffect(() => {
+    const handleScroll = (event) => {
+      if (window.pageYOffset < 20) {
+        if (window.innerWidth > 400) {
+          changeNavBarStyle(navBarStyle);
+          changeTitleFontSize("70pt");
+          changeTitleDefinitionOpacity("1");
+        } else if (window.innerWidth < 400) {
+          changeNavBarStyle({display: 'flex', flexDirection: 'row', justifyContent: 'center', marginBottom: '5px', marginTop: '20px', zIndex: '-2'});
+          changeTitleFontSize("40pt");
+          changeTitleDefinitionOpacity("0");
+        }
+      } else if (window.pageYOffset > 20) {
+        if (window.innerWidth > 400) {
+        changeNavBarStyle({display: 'flex', flexDirection: 'row', justifyContent: 'center', marginBottom: '-10px', zIndex: '-2'});
+        changeTitleFontSize("30pt");
+        changeTitleDefinitionOpacity("0");
+        } else if (window.innerWidth < 400) {
+          changeNavBarStyle({display: 'flex', flexDirection: 'row', justifyContent: 'center', marginBottom: '5px', marginTop: '20px', zIndex: '-2'});
+          changeTitleFontSize("40pt");
+          changeTitleDefinitionOpacity("0");
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('load', handleWindowSizeChange);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('load', handleWindowSizeChange);
+    };
+  }, []);
 
   return (
     <>
@@ -30,12 +75,12 @@ function NavigationBar() {
           ))}
         </div>
         <a>
-          <div id="navBackground">
+          <div id="navBackground" style={navBarStyle}>
             {calebArr.map((char, index) => (
               <h1
                 key={index}
                 id={`titleContent-${index}`}
-                style={{ fontFamily: "kognigear.regular" }}
+                style={{ fontFamily: "kognigear.regular", fontSize: titleFontSize }}
                 content={char}
                 onMouseEnter={() => {
                   document.getElementById(`titleContent-${index}`).style.color = "white";
@@ -74,12 +119,11 @@ function NavigationBar() {
                 {char}
               </h1>
             ))}
-            <h2 id="titleDefinition">{titleDefinition}</h2>
+            <h2 id="titleDefinition" style={{opacity: titleDefinitionOpacity }}>{titleDefinition}</h2>
           </div>
         </a>
         <a id="showNavBar" onClick={() => {
             changeShowNavBar(!showNavbar);
-            console.log("Navbar is " + showNavbar);
             if (showNavbar === false) {
               document.getElementById("navBar").className = changeNavBarClassName("fas fa-bars");
 
