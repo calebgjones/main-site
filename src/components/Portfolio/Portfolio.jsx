@@ -1,8 +1,24 @@
+import PortfolioContent from "./PortfolioContent";
+import "./Portfolio.css";
+
 const Portfolio = () => {
     return (
         <div id="contentContainer">
         <h1 className="contentHeader">Portfolio</h1>
-        <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExbm5wZ2Nid2h0cXJ3aWllankxeTZmMG43Y2VmZ2c2MHQ1azA4eWR5NyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3HxxjCY9r1umuGv8Qq/giphy.webp" />
+        {PortfolioContent.map((item, index) => (
+            <div className="portfolioContent">
+                <a href={item.link} target="_blank" rel="noreferrer">
+                <div key={index} id="galleryItem">
+                    <img className="galleryImage" id={item.id} src={"/img/PortfolioContent/"+item.id+".jpg"} alt={item.description} />
+                </div>
+                </a>
+                <div className="portfolioDetails">
+                    <p id="portfolioTitle">{item.title}</p>
+                    <p id="portfolioTech">{item.tech}</p>
+                    <p id="portfolioDevs">{item.devs}</p>
+                </div>
+                </div>
+            ))}
         </div>
     )
     }

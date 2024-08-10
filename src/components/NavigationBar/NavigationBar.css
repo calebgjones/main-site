@@ -23,6 +23,7 @@
     font-size: 30pt;
     margin: 0 5px -40px 5px;
     transition: color 0.25s ease-in-out;
+    z-index: 99;
 }
 
 #socialMediaLinks:hover {

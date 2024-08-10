@@ -185,16 +185,6 @@ function NavigationBar() {
               document.getElementById("navBar").className = changeNavBarClassName("fas fa-times");
               document.getElementById("navBar").style.display = "flex";
           }}}><li>Portfolio</li></Link>
-            <Link to="/about" onClick={() => {
-            changeShowNavBar(!showNavbar);
-            if (showNavbar === false) {
-              document.getElementById("navBar").className = changeNavBarClassName("fas fa-bars");
-
-              document.getElementById("navBar").style.display = "none";
-            } else {
-              document.getElementById("navBar").className = changeNavBarClassName("fas fa-times");
-              document.getElementById("navBar").style.display = "flex";
-          }}}><li>About</li></Link>
             <Link to="/contact" onClick={() => {
             changeShowNavBar(!showNavbar);
             if (showNavbar === false) {

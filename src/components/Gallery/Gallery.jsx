@@ -25,10 +25,10 @@ function handleClose () {
                 <div key={index} id="galleryItem">
                     <div id="popUpContainer">
                         <div id="popUp" style={{display: popUpVisible ? 'block' : 'none'}}>
-                            <img id="popUpImage" src={"/img/"+currentID+".jpg"} alt="popUp" />
+                            <img id="popUpImage" src={"/img/GalleryContent/"+currentID+".jpg"} alt="popUp" />
                         </div>
                     </div>
-                    <img onClick={() => handleClick(item)} className="galleryImage" id={item.id} src={"/img/"+item.id+".jpg"} alt={item.description} />
+                    <img onClick={() => handleClick(item)} className="galleryImage" id={item.id} src={"/img/GalleryContent/"+item.id+".jpg"} alt={item.description} />
                     <p className="galleryDescription">{item.description}</p>
                     </div>
                 </div>

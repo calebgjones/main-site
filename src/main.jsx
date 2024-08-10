@@ -7,7 +7,6 @@ import ContentArea from './components/ContentArea/ContentArea.jsx';
 import NavigationBar from './components/NavigationBar/NavigationBar.jsx';
 import Gallery from './components/Gallery/Gallery.jsx';
 import Portfolio from './components/Portfolio/Portfolio.jsx';
-import About from './components/About/About.jsx';
 import Contact from './components/Contact/Contact.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -19,7 +18,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route index element={<ContentArea />} />
         <Route path='gallery' element={<Gallery />} />
         <Route path='portfolio' element={<Portfolio />} />
-        <Route path='about' element={<About />} />
         <Route path='contact' element={<Contact />}/>
       </Route>
     </Routes>
