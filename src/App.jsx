@@ -12,14 +12,29 @@ function App() {
 
   return (
     <>
-    <header>
-      <meta name="title" content="Caleb Jones"/>
-      <meta name="description" content="My portfolio! Showcasing my latest projects, as well as my journey with UX development and web design."/>
-      <meta name="keywords" content="design, development, UX, HTML, CSS, Java, javascript, Caleb Jones, Caleb, Jones, Grandin"/>
-      <meta name="robots" content="index, follow"/>
-      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-      <meta name="language" content="English"/>
-    </header>
+    <head>
+    /* HTML Meta Tags */
+<title>Caleb Jones</title>
+<meta name="description" content="This site features projects which I am working on, as well as my progress with UX and web design."/>
+
+/* Google / Search Engine Tags */
+<meta itemprop="name" content="Caleb Jones"/>
+<meta itemprop="description" content="This site features projects which I am working on, as well as my progress with UX and web design."/>
+<meta itemprop="image" content=""/>
+
+/* Facebook Meta Tags */
+<meta property="og:url" content="https://www.calebdagoat.com"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Caleb Jones"/>
+<meta property="og:description" content="This site features projects which I am working on, as well as my progress with UX and web design."/>
+<meta property="og:image" content=""/>
+
+/* Twitter Meta Tags */
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Caleb Jones"/>
+<meta name="twitter:description" content="This site features projects which I am working on, as well as my progress with UX and web design."/>
+<meta name="twitter:image" content=""/>
+    </head>
       <Notification />
     </>
   )
