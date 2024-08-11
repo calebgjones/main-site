@@ -24,7 +24,7 @@ function NavigationBar() {
   var [titleFontSize, changeTitleFontSize] = useState("70pt");
   var [navLinksTop, changeNavLinksTop] = useState("107px");
 
-  const handleWindowSizeChange = (event) => {
+  const handleWindowSizeChange = () => {
     if (window.innerWidth < 400) {
       changeNavBarStyle({display: 'flex', flexDirection: 'row', justifyContent: 'center', marginBottom: '5px', marginTop: '20px', zIndex: '-2'});
       changeTitleFontSize("40pt");
@@ -34,7 +34,7 @@ function NavigationBar() {
 
 
   useEffect(() => {
-    const handleScroll = (event) => {
+    const handleScroll = () => {
       if (window.pageYOffset < 20) {
 
           /* Desktop Device, not scrolled */
@@ -80,7 +80,7 @@ function NavigationBar() {
 
   return (
     <>
-      <div id="navContainer">
+      <div onLoad={handleWindowSizeChange} id="navContainer">
         <div id="socialMediaLinksContainer">
           {socialMediaIcons.map((char) => (
             <a

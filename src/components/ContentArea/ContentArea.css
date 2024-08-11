@@ -23,7 +23,6 @@
     color: white;
     margin: 0 0 40px 0;
     font-size: 20pt;
-    overflow-y: scroll;
 }
 
 @media screen and (max-width: 400px) {

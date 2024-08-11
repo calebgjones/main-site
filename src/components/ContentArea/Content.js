@@ -1,5 +1,3 @@
-import { LoremIpsum } from "lorem-ipsum";
-
 const Content = [
     {
         section: "section1",
