@@ -10,7 +10,7 @@ function NavigationBar() {
   var calebArr = caleb.split(/(?!$)/u);
   var socialMedia = ["github.com/calebgjones", "linkedin.com/in/caleb-jones-a39150185/", "instagram.com/ok.lub"];
   var socialMediaIcons = socialMedia.map((url) => url.split(/https:\/www.|.com\//));
-  const [titleDefinition, setTitleDefinition] = useState("UX Developer");
+  const [titleDefinition, setTitleDefinition] = useState("");
   var [titleDefinitionOpacity, changeTitleDefinitionOpacity] = useState("1");
   var [showNavbar, changeShowNavBar] = useState(false);
   var [navBarClassName, changeNavBarClassName] = useState("fas fa-bars");
@@ -58,7 +58,6 @@ function NavigationBar() {
         changeTitleFontSize("30pt");
         changeTitleDefinitionOpacity("0");
         changeNavLinksTop("55px");
-        console.log(socialMediaIcons);
 
           /* Mobile Device, scrolled */
         } else if (window.innerWidth < 400) {
@@ -82,8 +81,9 @@ function NavigationBar() {
     <>
       <div onLoad={handleWindowSizeChange} id="navContainer">
         <div id="socialMediaLinksContainer">
-          {socialMediaIcons.map((char) => (
+          {socialMediaIcons.map((char, index) => (
             <a
+              key={index}
               id="socialMediaLinks"
               href={`https://www.${char[0]}.com/${char[1]}`}
               target="_blank"
@@ -113,6 +113,7 @@ function NavigationBar() {
                   let titlePrompt = prompt(caleb);
                   if (titlePrompt === null) {
                     setCaleb("Caleb Jones");
+                    setTitleDefinition("");
                   } else if (titlePrompt.replace(/ /g, "") === "") {
                     setCaleb("Caleb Jones");
                   } else if (isProfane(titlePrompt) === true) {
@@ -130,8 +131,13 @@ function NavigationBar() {
                       setCaleb("I love nice words!");
                       notify("Nice words activated!", "success");
                     }, 4000);
-                  } else {
+                  } else if (titlePrompt.toLowerCase() === "goated" || titlePrompt.toLowerCase() === "goat") {
+                    setCaleb("GOATED");
+                    setTitleDefinition("For real.");
+                  } 
+                  else {
                     setCaleb(titlePrompt);
+                    setTitleDefinition("");
                   }
                 }}
               >

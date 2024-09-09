@@ -75,6 +75,7 @@
     position: fixed;
     background-color: rgba(0, 0, 0, 0.753);
     transition: top 0.3s ease-in-out;
+    z-index: 99;
 }
 
 li {
